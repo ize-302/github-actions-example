@@ -1,7 +1,7 @@
 name: Test
 
 on:
-  push:
+  pull_request:
     branches:
       - master
 
@@ -13,4 +13,4 @@ jobs:
       - name: Run Jest
       - uses: stefanoeb/jest-action@1.0.3 # This is the action
         with:
-          jestArgs: ../../app.test.js
+          jestArgs: ./app.test.js

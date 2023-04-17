@@ -1,9 +1,6 @@
 name: Test
 
-on:
-  pull_request:
-    branches:
-      - master
+on: pull_request
 
 jobs:
   build:
@@ -11,6 +8,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run Jest
-      - uses: stefanoeb/jest-action@1.0.3 # This is the action
+        uses: actions/setup-node@v1 # This is the action
         with:
-          jestArgs: ./app.test.js
+          node-version: "16"
+      - run: npm install
+      - run: npm test

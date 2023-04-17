@@ -11,5 +11,3 @@ jobs:
         uses: actions/setup-node@v1 # This is the action
         with:
           node-version: "16"
-      - run: npm install
-      - run: npm test

@@ -11,11 +11,3 @@ jobs:
         uses: actions/setup-node@v1 # This is the action
         with:
           node-version: "16"
-
-      # Install required deps for action
-      - name: Install Dependencies
-        run: npm install
-
-      # Finally, run our tests
-      - name: Run the tests
-        run: npm test

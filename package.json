@@ -6,7 +6,7 @@
   },
   "scripts": {
     "start": "node app.js",
-    "test": "jest"
+    "test": "jest --watchAll=false"
   },
   "devDependencies": {
     "jest": "^29.5.0"

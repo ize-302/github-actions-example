@@ -6,7 +6,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "test": "jest --watchAll --maxWorkers=1"
+    "test": "jest"
   },
   "devDependencies": {
     "jest": "^29.5.0"

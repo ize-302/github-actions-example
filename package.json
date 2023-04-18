@@ -5,8 +5,8 @@
     "supertest": "^6.3.3"
   },
   "scripts": {
-    "start": "node app.js",
-    "test": "jest --watchAll=false"
+    "start": "node server.js",
+    "test": "jest --forceExit --detectOpenHandles  --watchAll --maxWorkers=1"
   },
   "devDependencies": {
     "jest": "^29.5.0"

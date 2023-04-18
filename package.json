@@ -6,7 +6,8 @@
   },
   "scripts": {
     "start": "node server.js",
-    "test": "jest --forceExit --detectOpenHandles  --watchAll --maxWorkers=1"
+    "test": "jest --watchAll --maxWorkers=1",
+    "test:ci": "jest --watchAll --maxWorkers=1"
   },
   "devDependencies": {
     "jest": "^29.5.0"

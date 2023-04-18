@@ -1,16 +1,28 @@
 name: Test
 
-on:
-  push:
-    branches:
-      - master
+on: [pull_request]
 
 jobs:
-  build:
+  tests:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 16.x, 14.x]
+
     steps:
       - uses: actions/checkout@v2
-      - name: Run Jest
-      - uses: stefanoeb/jest-action@1.0.3 # This is the action
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
         with:
-          jestArgs: ../../app.test.js
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run CI
+        run: npm ci
+
+      - name: Run test
+        run: npm test
